@@ -13,19 +13,20 @@ def init_app():
     googleinit(keys['google'])
     redditinit(keys['reddit'])
 
-def create_post(line):
-    rs = preprocess(line)
+def create_post(line, is_filtered=False):
+    if not is_filtered:
+        rs = preprocess(line)
+        
+        if not rs:
+            return None
+        title, txt = rs
+
+    else:
+        title,txt = line.split('|')
     
-    if not rs:
-        return None
-
-    title, txt = rs
-
     if has_this_shit_been_posted(title):
         print("-- Already been posted: ", title)
         return None
-
-    return
     txt_trans = translate_text(translate_buzzwords(txt))
     title_trans = translate_text(translate_buzzwords(title))
 

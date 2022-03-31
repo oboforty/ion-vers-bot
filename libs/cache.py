@@ -13,7 +13,6 @@ def has_this_shit_been_posted(post_title):
 
     _md5 = hashlib.md5(post_title.encode('utf-8')).hexdigest()
 
-    print(_md5, post_title)
     notok = _md5 in _cache
     _cache.add(_md5)
 
