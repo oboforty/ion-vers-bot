@@ -16,7 +16,7 @@ LOOKUP_WORDS = {
 def translate_buzzwords(txt):
 
     filteredwords = str(txt)
-    for word, repl_word in LOOKUP_WORDS:
+    for word, repl_word in LOOKUP_WORDS.items():
         filteredwords = filteredwords.replace(word, repl_word)
 
     return filteredwords

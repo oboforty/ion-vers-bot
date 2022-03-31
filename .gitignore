@@ -1,5 +1,6 @@
 libs/secret.json
 libs/geopoly-*.json
+manual_posts.txt
 
 # Byte-compiled / optimized / DLL files
 __pycache__/

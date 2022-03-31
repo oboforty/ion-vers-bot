@@ -1,4 +1,3 @@
-import hashlib
 import re
 
 _filters = [
@@ -74,8 +73,6 @@ def _post_filter(line):
 
 
 def preprocess(line):
-    #_md5 = hashlib.md5(title.encode('utf-8')).hexdigest()
-
     if not line:
         return None
     
@@ -102,6 +99,6 @@ def preprocess(line):
     if not title:
         title = " ".join(line.split(' ')[0:3])
 
-    print(title, '->', line)
+    #print(title, '->', line)
 
-    return None
+    return title, line

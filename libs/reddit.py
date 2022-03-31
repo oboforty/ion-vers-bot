@@ -15,6 +15,7 @@ def init(_keys):
 def create_post(txt, title):
     global rr
 
+    title = title[:255]
     rr.subreddit('ionvers').submit(title=title,selftext=txt)
 
     return True
