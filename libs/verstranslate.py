@@ -10,6 +10,7 @@ LOOKUP_WORDS = {
     "ter-kurt": "space-horn",
     "ter kurt": "space-horn",
     "robotkar": "robot-arm",
+    'jovo': 'future',
 }
 
 

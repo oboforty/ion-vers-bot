@@ -21,6 +21,10 @@ _filters = [
     'Ion Danvers replied',
     'wIon Danvers',
     'wion Danvers',
+    'mIon Danvers',
+    'mion Danvers',
+    'hIon Danvers',
+    'hion Danvers',
     'wRedmond Csombordi',
     'Redmond Csombordi',
     'wJózsef Mash Trencsényi',
@@ -29,9 +33,12 @@ _filters = [
     ' wFeryx Finta',
     'Feryx Finta',
     ' wActive',
+    ' mActive',
+    ' dActive',
     ' w ',
     ' h ',
     ' d ',
+    ' m ',
     'Reply',
     'Replied',
     'replied'
@@ -70,7 +77,7 @@ def _post_filter(line):
         ss = filter(lambda x: x.strip()!="", map(strip_digit, line.split(_filter)))
         line = "".join(ss)
 
-    if line.endswith(' w') or line.endswith(' h'):
+    if line.endswith(' w') or line.endswith(' h') or line.endswith(' m'):
         line = line[:-2]
     if line.endswith('...'):
         line = line[:-3]
